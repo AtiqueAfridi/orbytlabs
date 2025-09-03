@@ -1,0 +1,13 @@
+{
+  "name": "ai-company-portfolio",
+  "version": "1.0.0",
+  "description": "AI Company Portfolio Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["ai", "portfolio", "website"],
+  "author": "",
+  "license": "MIT"
+}
