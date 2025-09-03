@@ -186,6 +186,13 @@
     margin-top: 3rem;
 }
 
+/* On wide screens, force three equal columns so cards line up consistently */
+@media (min-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .service-card {
     background: white;
     padding: 2rem;
@@ -203,15 +210,15 @@
 }
 
 .service-image {
-    /* Rendered size: 519 x 200 (max), centered inside the card */
+    /* Rendered size: 519 x 200 (preferred), centered inside the card */
     position: absolute;
     top: 0;
     left: 50%;                 /* center the framed media */
     right: auto;
     transform: translateX(-50%);
-    width: 100%;
-    max-width: 519px;         /* match the requested rendered width */
-    height: 200px;            /* match the requested rendered height */
+    width: 519px;             /* preferred rendered width */
+    max-width: 100%;          /* shrink on small screens */
+    height: 200px;            /* fixed rendered height */
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
