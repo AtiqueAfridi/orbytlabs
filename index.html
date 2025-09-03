@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/responsive.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -234,7 +235,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <h4>Email</h4>
-                        <p>hello@orbytlabs.com</p>
+                        <p>orbyt.mvp@gmail.com</p>
                     </div>
                     <div class="contact-item">
                         <h4>Phone</h4>
@@ -246,6 +247,7 @@
                     </div>
                 </div>
                 <form class="contact-form" id="contact-form">
+                    <div class="form-status" id="form-status"></div>
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -258,7 +260,10 @@
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
                 </form>
             </div>
         </div>

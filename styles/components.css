@@ -455,6 +455,7 @@
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
 }
 
 .form-group {
@@ -481,6 +482,58 @@
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+.form-status {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.form-status.success {
+    background: #f0fff4;
+    color: #38a169;
+    border: 1px solid #9ae6b4;
+    display: block;
+}
+
+.form-status.error {
+    background: #fed7d7;
+    color: #e53e3e;
+    border: 1px solid #feb2b2;
+    display: block;
+}
+
+.form-status.loading {
+    background: #ebf8ff;
+    color: #3182ce;
+    border: 1px solid #90cdf4;
+    display: block;
+}
+
+.btn-loading {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-loading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Footer Styles */
