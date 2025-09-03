@@ -236,3 +236,36 @@ const aboutObserver = new IntersectionObserver(function(entries) {
 if (aboutSection) {
     aboutObserver.observe(aboutSection);
 }
+
+// Image Loading Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '0';
+            this.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                this.style.opacity = '1';
+            }, 100);
+        });
+    });
+});
+
+// Service Card Interactive Effects
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1.2) rotate(5deg)';
+            icon.style.transition = 'transform 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.service-icon');
+            icon.style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+});
