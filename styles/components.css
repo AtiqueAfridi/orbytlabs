@@ -203,11 +203,15 @@
 }
 
 .service-image {
+    /* Rendered size: 519 x 200 (max), centered inside the card */
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
+    left: 50%;                 /* center the framed media */
+    right: auto;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 519px;         /* match the requested rendered width */
+    height: 200px;            /* match the requested rendered height */
     overflow: hidden;
     border-radius: 12px 12px 0 0;
 }
